@@ -161,7 +161,7 @@ export const forgotPassword = async (req, res) => {
     //send email
     await sendPasswordResetEmail(
       user.email,
-      `http://localhost:5173/reset-password/${resetToken}`
+      `${process.env.CLIENT_URL}/reset-password/${resetToken}`
     );
 
     res.status(200).json({
